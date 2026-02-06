@@ -574,7 +574,7 @@ body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.
     color: #ecf0f1;
 }
 
-/* Responsive Design */
+/* Responsive Design - Updated */
 @media (max-width: 1024px) {
     .hero-content h1 {
         font-size: 2.5rem;
