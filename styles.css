@@ -76,15 +76,17 @@ header {
     font-weight: bold;
     color: #2c3e50;
     cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .logo h1 {
     transition: all 0.3s ease;
-    padding: 5px 10px;
-    border-radius: 5px;
+    margin: 0;
 }
 
-.logo h1:hover {
+.logo:hover {
     color: #3498db;
     transform: translateX(3px);
     background-color: rgba(52, 152, 219, 0.1);
