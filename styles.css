@@ -630,8 +630,53 @@ body.dark-mode p, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.
 }
 
 @media (max-width: 768px) {
+    /* Mobile nav: hidden by collapsing max-height for smooth animation */
     .nav-links {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 0;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: max-height 320ms cubic-bezier(.2,.9,.2,1), opacity 250ms ease, transform 250ms ease, padding 250ms ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        z-index: 999;
+    }
+
+    /* When open, expand the menu smoothly */
+    .nav-links.open {
+        max-height: 480px; /* enough for several links */
+        padding: 0.6rem 0;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile link appearance - bigger, distinct and plain style */
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 1.05rem;
+        color: #2c3e50;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(44,62,80,0.06);
+        letter-spacing: 0.4px;
+        transition: background-color 180ms ease, color 180ms ease, padding-left 220ms ease;
+    }
+
+    .nav-links li a:hover {
+        background-color: rgba(52,152,219,0.08);
+        color: #2471a3;
+        padding-left: 26px;
     }
 
     .hamburger {
