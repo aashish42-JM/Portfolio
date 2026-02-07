@@ -1,3 +1,14 @@
+// Make logo click to return home
+const logo = document.querySelector('.logo');
+if (logo) {
+    logo.addEventListener('click', () => {
+        const homeSection = document.querySelector('#home');
+        if (homeSection) {
+            homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+}
+
 // Mobile menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
