@@ -1,0 +1,3 @@
+- [x] Update src paths in index.html for header logo, enlarged image, and about profile image to 'profile.jpg.jpg'
+- [x] Verify the changes by checking the updated HTML
+- [x] Add favicon link to index.html using 'profile.jpg.jpg'
