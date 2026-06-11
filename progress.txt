@@ -58,3 +58,6 @@
 - Updated scroll-to-top functionality
 - Maintained dark/light mode toggle
 - Kept all existing animations and effects intact
+
+## Deployment
+- Pushed all changes to https://github.com/aashish42-JM/Portfolio
