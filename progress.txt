@@ -1,0 +1,60 @@
+# Portfolio Website Development Progress
+
+## Initial Setup & Exploration
+- Explored the project directory structure
+- Checked index.html, styles.css, script.js files
+- Moved profile.jpg to images/ directory and updated file paths
+
+## Header & Layout Improvements
+- Increased header padding to make it more spacious
+- Added max-width to nav container for better centering
+- Updated nav links gap for more space between items
+- Increased header photo size and added hover effects
+- Removed the broken hover-only enlarged photo and added proper modal
+
+## Hero Section Updates
+- Increased hero content max-width
+- Larger font sizes for heading and text
+- Increased margins and line heights for better readability
+- Added big clickable boxes for each nav option with icons and hover effects
+- Linked each hero box to the corresponding page
+
+## Multiple Page Structure
+- Created separate HTML files for each section:
+  - about.html
+  - skills.html
+  - projects.html
+  - education.html
+  - achievements.html
+  - contact.html
+- Updated all navigation links to point to the new pages
+- Added active state styling to highlight the current page
+- Updated index.html to only show the hero section
+
+## Skills Section Updates
+- Added disclaimer text stating skill sets are for representation and may include roadmap/target skills
+- Highlighted HTML, CSS, JavaScript, and Python with gradient background to show existing knowledge
+
+## Projects Section Updates
+- Removed Weather Dashboard project
+- Added Explore Nepal (Genz Innovators) project with GitHub link
+- Added Career Tantra project with GitHub link
+- Changed button text to "Visit Now" for new projects
+
+## Profile Picture Functionality
+- Initially made profile pic appear only on hover with icon placeholder
+- Updated to always show profile picture
+- Added hover enlargement in center of screen with circular frame and dark overlay
+- Adjusted CSS to ensure enlarged profile pic is perfectly centered (exact middle of screen)
+- Adjusted position to be a little lower than exact center (58% from top)
+- Further adjusted position to be even lower (65% from top)
+
+## Fixes
+- Fixed content getting cut off at the top by adding padding-top to body
+- Cleaned up old unused modal code
+
+## Styling & Animations
+- Added smooth transitions for all interactive elements
+- Updated scroll-to-top functionality
+- Maintained dark/light mode toggle
+- Kept all existing animations and effects intact
