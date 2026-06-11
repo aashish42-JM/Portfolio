@@ -59,5 +59,11 @@
 - Maintained dark/light mode toggle
 - Kept all existing animations and effects intact
 
+## Mobile Responsiveness Improvements
+- Updated media queries for better mobile experience
+- Adjusted hero boxes layout for small screens
+- Made profile image and enlarged photo smaller on mobile
+- Optimized padding and font sizes for mobile devices
+
 ## Deployment
 - Pushed all changes to https://github.com/aashish42-JM/Portfolio
