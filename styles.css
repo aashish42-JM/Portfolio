@@ -157,6 +157,35 @@ header.scrolled {
     font-weight: 700;
     color: var(--text-dark);
     gap: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateX(5px);
+}
+
+.logo:hover h1 {
+    animation: logoBounce 0.5s ease;
+}
+
+@keyframes logoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
 }
 
 .photo-container {

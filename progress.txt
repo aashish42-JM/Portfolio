@@ -71,5 +71,10 @@
 - Added slide-down and staggered fade-in effects to mobile menu items
 - Made the mobile menu more professional and polished
 
+## Logo Link & Hover Animation
+- Made the logo (name + photo) a clickable link to home page
+- Added slide-right animation to logo on hover
+- Added bounce animation to name on hover
+
 ## Deployment
 - Pushed all changes to https://github.com/aashish42-JM/Portfolio
