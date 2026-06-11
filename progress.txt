@@ -76,5 +76,19 @@
 - Added slide-right animation to logo on hover
 - Added bounce animation to name on hover
 
+## Hero Section Layout Adjustment
+- Made hero section taller (150vh)
+- Hero text visible initially above the fold
+- Hero boxes positioned below, so you scroll down to see them
+- Separated hero content and boxes into vertical layout
+
+## Reverted to Hover-Based Enlarged Profile Photo
+- Changed back from click modal to hover-based enlarged photo
+- Photo appears in center of screen in circular frame when hovered
+- Removed black overlay completely to eliminate header highlight
+- Updated all HTML pages to include enlarged-photo element
+- Removed photo modal elements and functionality
+- Updated script.js to remove modal code
+
 ## Deployment
 - Pushed all changes to https://github.com/aashish42-JM/Portfolio
