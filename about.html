@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Aashish Timalsina</title>
+    <link rel="icon" href="images/Favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li><a href="achievements.html">Achievements</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -40,15 +42,74 @@
         </nav>
     </header>
 
-    <section id="about">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <section id="about" class="about-section">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>I am currently pursuing a Bachelor's degree in Computer Science and Information Technology under Tribhuvan University at Academia International College. I have a strong interest in programming, problem-solving, and software development. My main focus areas include object-oriented programming, data structures, and backend development using Python and web technologies. I am continuously learning and improving my skills through academic projects and self-practice.</p>
+                <div class="about-left">
+                    <div class="about-image-wrapper">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="about-image">
+                        <div class="about-image-decoration"></div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="images/profile.jpg" alt="Aashish Timalsina" class="profile-image">
+                <div class="about-right">
+                    <div class="about-intro">
+                        <p class="about-lead">Hi, I'm Aashish— a BSc CSIT student at Academia International College, Tribhuvan University, with a deep curiosity for technology and its potential to create real impact.</p>
+                    </div>
+                    <div class="about-story">
+                        <p>Growing up in Nepal, I've always been fascinated by how technology can solve everyday problems in our local communities. What started as a simple curiosity about how websites work has evolved into a passion for building meaningful, user-centric products.</p>
+                    </div>
+                    <div class="about-focus">
+                        <p>I enjoy working at the intersection of modern web development and AI, exploring ways to make applications smarter and more intuitive. Whether it's building tools for career guidance or platforms that help people discover local gems, my goal is to create things that people actually find useful.</p>
+                    </div>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Innovation with purpose</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Community-focused solutions</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-code"></i>
+                            <span>Clean, maintainable code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Technologies Learned</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Hackathons Participated</div>
+                    </div>
                 </div>
             </div>
         </div>

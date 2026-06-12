@@ -1,94 +1,32 @@
-# Portfolio Website Development Progress
+# Portfolio Website Progress
 
-## Initial Setup & Exploration
-- Explored the project directory structure
-- Checked index.html, styles.css, script.js files
-- Moved profile.jpg to images/ directory and updated file paths
-
-## Header & Layout Improvements
-- Increased header padding to make it more spacious
-- Added max-width to nav container for better centering
-- Updated nav links gap for more space between items
-- Increased header photo size and added hover effects
-- Removed the broken hover-only enlarged photo and added proper modal
-
-## Hero Section Updates
-- Increased hero content max-width
-- Larger font sizes for heading and text
-- Increased margins and line heights for better readability
-- Added big clickable boxes for each nav option with icons and hover effects
-- Linked each hero box to the corresponding page
-
-## Multiple Page Structure
-- Created separate HTML files for each section:
-  - about.html
-  - skills.html
-  - projects.html
-  - education.html
-  - achievements.html
-  - contact.html
-- Updated all navigation links to point to the new pages
-- Added active state styling to highlight the current page
-- Updated index.html to only show the hero section
-
-## Skills Section Updates
-- Added disclaimer text stating skill sets are for representation and may include roadmap/target skills
-- Highlighted HTML, CSS, JavaScript, and Python with gradient background to show existing knowledge
-
-## Projects Section Updates
-- Removed Weather Dashboard project
-- Added Explore Nepal (Genz Innovators) project with GitHub link
-- Added Career Tantra project with GitHub link
-- Changed button text to "Visit Now" for new projects
-
-## Profile Picture Functionality
-- Initially made profile pic appear only on hover with icon placeholder
-- Updated to always show profile picture
-- Added hover enlargement in center of screen with circular frame and dark overlay
-- Adjusted CSS to ensure enlarged profile pic is perfectly centered (exact middle of screen)
-- Adjusted position to be a little lower than exact center (58% from top)
-- Further adjusted position to be even lower (65% from top)
-
-## Fixes
-- Fixed content getting cut off at the top by adding padding-top to body
-- Cleaned up old unused modal code
-
-## Styling & Animations
-- Added smooth transitions for all interactive elements
-- Updated scroll-to-top functionality
-- Maintained dark/light mode toggle
-- Kept all existing animations and effects intact
-
-## Mobile Responsiveness Improvements
-- Updated media queries for better mobile experience
-- Adjusted hero boxes layout for small screens
-- Made profile image and enlarged photo smaller on mobile
-- Optimized padding and font sizes for mobile devices
-
-## Animated Hamburger Menu
-- Added hover effects to hamburger icon
-- Added smooth spring-like animation to hamburger lines
-- Added slide-down and staggered fade-in effects to mobile menu items
-- Made the mobile menu more professional and polished
-
-## Logo Link & Hover Animation
-- Made the logo (name + photo) a clickable link to home page
-- Added slide-right animation to logo on hover
-- Added bounce animation to name on hover
-
-## Hero Section Layout Adjustment
-- Made hero section taller (150vh)
-- Hero text visible initially above the fold
-- Hero boxes positioned below, so you scroll down to see them
-- Separated hero content and boxes into vertical layout
-
-## Reverted to Hover-Based Enlarged Profile Photo
-- Changed back from click modal to hover-based enlarged photo
-- Photo appears in center of screen in circular frame when hovered
-- Removed black overlay completely to eliminate header highlight
-- Updated all HTML pages to include enlarged-photo element
-- Removed photo modal elements and functionality
-- Updated script.js to remove modal code
-
-## Deployment
-- Pushed all changes to https://github.com/aashish42-JM/Portfolio
+## Completed Tasks:
+- ✅ Created experience.html with vertical timeline
+- ✅ Added timeline entries: Projects, Hackathons, Learning milestones
+- ✅ Added modern CSS styling for timeline (vertical layout, gradient colors)
+- ✅ Made timeline fully responsive (mobile-friendly)
+- ✅ Added scroll animations using Intersection Observer
+- ✅ Updated all HTML files to include Experience link in navigation
+- ✅ Created script.js with interactive features:
+  - Hamburger menu toggle
+  - Dark/light theme toggle (with localStorage)
+  - Scroll-to-top button
+  - Typing effect for hero section
+  - Skill progress bar animations
+  - Timeline item scroll animations
+- ✅ Updated skills.html to use data-width attributes for better animations
+- ✅ Added timeline styles to styles.css
+- ✅ Redesigned contact.html with modern UI/glassmorphism
+- ✅ Added new heading "Let’s Build Something Amazing Together"
+- ✅ Added form with Email, GitHub, LinkedIn, Location
+- ✅ Added smooth animations and hover effects
+- ✅ Added success/error toast notifications
+- ✅ Made contact section fully responsive
+- ✅ Integrated Formspree for email sending functionality
+- ✅ Added scroll progress indicator to all HTML files
+- ✅ Improved navbar design with glassmorphism backdrop
+- ✅ Added active state for header on scroll
+- ✅ Updated all nav bars to include Experience link
+- ✅ Improved scroll progress bar styling with gradient
+- ✅ Optimized script.js for better performance
+- ✅ Ensured full responsiveness across all devices

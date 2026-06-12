@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Aashish Timalsina</title>
+    <link rel="icon" href="images/Favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li><a href="achievements.html">Achievements</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
@@ -40,39 +42,85 @@
         </nav>
     </header>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+            <div class="section-header">
+                <h2>Let’s Build Something Amazing Together</h2>
+                <p>Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+            </div>
             <div class="contact-content">
-                <form action="https://formspree.io/f/mreazaaw" method="POST" class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                 </form>
                 <div class="contact-info">
-                    <p><strong>Email:</strong> aashish.tim@gmail.com</p>
-                    <p><strong>Phone:</strong> 9843062333</p>
-                    <p><strong>Location:</strong> Lalitpur Nepal</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/aashish-timalsina/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/aashish42-JM" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:aashish.tim@gmail.com">aashish.tim@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/aashish42-JM" target="_blank">github.com/aashish42-JM</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/aashish-timalsina/" target="_blank">linkedin.com/in/aashish-timalsina</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Lalitpur, Nepal</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <div class="toast-message"></div>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
 
     <footer>
         <div class="container">

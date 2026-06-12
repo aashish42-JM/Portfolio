@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Aashish Timalsina</title>
+    <link rel="icon" href="images/Favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="skills.html">Skills</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li><a href="achievements.html">Achievements</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -40,35 +42,169 @@
         </nav>
     </header>
 
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <section id="projects">
         <div class="container">
-            <h2>Projects</h2>
-            <p>I have worked on several academic and personal projects, including a Public Transport Suggestion System built using Python that helps users find available buses between two stops while considering route direction and fare types. Another project is an e-commerce website focused on promoting authentic Nepali products, developed using HTML, CSS, and Django, featuring product listings and category-based navigation.</p>
-            <br>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Real-world applications solving meaningful problems</p>
+            </div>
+            
             <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Public Transport Suggestion System</h3>
-                    <p>A Python-based application that helps users find available buses between two stops while considering route direction and fare types.</p>
-                    <div class="project-tech">Python</div>
-                    <a href="#" class="project-link">View Project</a>
+                <div class="project-card featured">
+                    <div class="project-status completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="images/logo.png" alt="Explore Nepal Project" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-buttons">
+                                <a href="https://github.com/aashish42-JM/Genz-Innovators" class="btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" class="btn-secondary">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Explore Nepal</h3>
+                        <p class="project-description">
+                            AI-powered tourism discovery platform helping users discover hidden local events, underrated festivals, and authentic travel experiences in Nepal.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-map-marker-alt"></i> Local event discovery</li>
+                            <li><i class="fas fa-brain"></i> Personalized recommendations</li>
+                            <li><i class="fas fa-mountain"></i> Hidden destinations</li>
+                            <li><i class="fas fa-user-friends"></i> Travel like a local concept</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Gemini API</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>E-Commerce Website for Nepali Products</h3>
-                    <p>An e-commerce website focused on promoting authentic Nepali products, developed using HTML, CSS, and Django, featuring product listings and category-based navigation.</p>
-                    <div class="project-tech">HTML, CSS, Django</div>
-                    <a href="#" class="project-link">View Project</a>
+
+                <div class="project-card featured">
+                    <div class="project-status in-progress">
+                        <i class="fas fa-spinner fa-spin"></i> In Progress
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=AI%20career%20navigation%20platform%20dashboard%20with%20personalized%20roadmaps%20and%20learning%20paths%20in%20modern%20gradient%20UI&image_size=landscape_16_9" alt="Career Tantra Project" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-buttons">
+                                <a href="https://github.com/aashish42-JM/Career-Tantra" class="btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" class="btn-secondary">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Career Tantra</h3>
+                        <p class="project-description">
+                            AI-powered career navigation platform providing personalized roadmaps and learning guidance for students.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-road"></i> Dynamic roadmap engine</li>
+                            <li><i class="fas fa-robot"></i> AI guidance</li>
+                            <li><i class="fas fa-chart-line"></i> Career recommendations</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">AI/ML</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <h3>Explore Nepal (Genz Innovators)</h3>
-                    <p>A project focused on exploring and promoting Nepal's culture, heritage, and tourist destinations.</p>
-                    <div class="project-tech">Web Technologies</div>
-                    <a href="https://github.com/aashish42-JM/Genz-Innovators" class="project-link" target="_blank">Visit Now</a>
+                    <div class="project-status completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=C%2B%2B%20OOP%20attendance%20management%20system%20console%20interface%20with%20modern%20clean%20design%20and%20code%20snippets&image_size=landscape_16_9" alt="Attendance Management System" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-buttons">
+                                <a href="#" class="btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Attendance Management System</h3>
+                        <p class="project-description">
+                            OOP-based attendance management system built using C++ concepts with comprehensive class design.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">OOP</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <h3>Career Tantra</h3>
-                    <p>A platform to help users explore career opportunities and guidance.</p>
-                    <div class="project-tech">Web Technologies</div>
-                    <a href="https://github.com/aashish42-JM/Career-Tantra" class="project-link" target="_blank">Visit Now</a>
+                    <div class="project-status completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Python%20public%20transport%20suggestion%20system%20with%20map%20interface%20showing%20bus%20routes%20and%20stops&image_size=landscape_16_9" alt="Public Transport Suggestion System" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-buttons">
+                                <a href="#" class="btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Public Transport Suggestion System</h3>
+                        <p class="project-description">
+                            Python-based application that helps users find available buses between two stops while considering route direction and fare types.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-status completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </div>
+                    <div class="project-thumbnail">
+                        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=E-commerce%20website%20for%20authentic%20Nepali%20products%20with%20colorful%20product%20listings%20and%20Nepali%20cultural%20elements&image_size=landscape_16_9" alt="E-Commerce Website for Nepali Products" class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-buttons">
+                                <a href="#" class="btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce for Nepali Products</h3>
+                        <p class="project-description">
+                            E-commerce website focused on promoting authentic Nepali products with category-based navigation and product listings.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">Django</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
