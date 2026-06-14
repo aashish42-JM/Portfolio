@@ -11,6 +11,8 @@ const aboutRight = document.querySelector('.about-right');
 const statCards = document.querySelectorAll('.stat-card');
 const educationItems = document.querySelectorAll('.education-item');
 const achievementItems = document.querySelectorAll('.achievement-item');
+const skillCategoryCards = document.querySelectorAll('.skill-category-card');
+const profileCard = document.querySelector('.profile-card');
 const scrollProgress = document.getElementById('scroll-progress');
 const header = document.querySelector('header');
 const allNavLinks = document.querySelectorAll('.nav-links a');
@@ -78,10 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
     trackPageView(document.title);
     
     // Set initial animated elements to hidden
-    const animatedElements = document.querySelectorAll('.about-left, .about-right, .profile-card, .project-card, .timeline-item, .education-item, .achievement-item');
+    const animatedElements = document.querySelectorAll('.about-left, .about-right, .profile-card, .project-card, .timeline-item, .education-item, .achievement-item, .skill-category-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
     });
     
     // Initialize skill progress bars as a fallback
@@ -240,6 +243,14 @@ educationItems.forEach(item => {
 achievementItems.forEach(item => {
     animationObserver.observe(item);
 });
+
+// Observe skill category cards
+skillCategoryCards.forEach(card => {
+    animationObserver.observe(card);
+});
+
+// Observe profile card
+if (profileCard) animationObserver.observe(profileCard);
 
 // Typing effect for hero section (if available)
 const typingText = document.getElementById('typing-text');
