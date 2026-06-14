@@ -3,32 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aashish Timalsina - Portfolio</title>
+    <meta name="description" content="Portfolio of Aashish Timalsina — a CSIT student and full stack developer building AI-powered platforms focused on career growth, local discovery, and modern web experiences.">
+    <meta name="keywords" content="Aashish Timalsina, full stack developer, AI developer, Nepal, web developer, portfolio, React, Node.js, MongoDB, machine learning">
+    <meta name="author" content="Aashish Timalsina">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aashish Timalsina | Full Stack Developer & AI Enthusiast">
+    <meta property="og:description" content="Portfolio of Aashish Timalsina — a CSIT student and full stack developer building AI-powered platforms focused on career growth, local discovery, and modern web experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:image" content="https://yourportfolio.com/images/profile.jpg">
+    <meta property="og:site_name" content="Aashish Timalsina Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aashish Timalsina | Full Stack Developer & AI Enthusiast">
+    <meta name="twitter:description" content="Portfolio of Aashish Timalsina — a CSIT student and full stack developer building AI-powered platforms focused on career growth, local discovery, and modern web experiences.">
+    <meta name="twitter:image" content="https://yourportfolio.com/images/profile.jpg">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
+    
+    <title>Aashish Timalsina | Full Stack Developer & AI Enthusiast</title>
     <link rel="icon" href="images/Favicon.png" type="image/png">
+    <link rel="canonical" href="https://yourportfolio.com/">
+    
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your actual GA4 ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            page_path: window.location.pathname,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
-                <a href="index.html" class="logo">
+                <a href="#home" class="logo">
                     <div class="photo-container">
-                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="header-photo" id="header-img">
-                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="enlarged-photo">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="header-photo" id="header-img" loading="eager">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="enlarged-photo" loading="lazy">
                     </div>
                     <h1>Aashish Timalsina</h1>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="skills.html">Skills</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="experience.html">Experience</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="achievements.html">Achievements</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
                     <i class="fas fa-sun"></i>
@@ -59,28 +94,23 @@
                     <span>Nepal • CSIT Student</span>
                 </div>
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Aashish Timalsina</span>
+                    Building <span class="highlight">AI-powered platforms</span> for real-world impact.
                 </h1>
-                <h2 class="hero-subtitle">
-                    <span class="typing-text" id="typing-text"></span>
-                    <span class="typing-cursor">|</span>
-                </h2>
-                <p class="hero-description">
-                    Full Stack Developer focused on building <span class="emphasis">AI-powered applications</span> that solve real-world problems. Currently exploring career growth platforms and local discovery tools.
+                <p class="hero-subtitle">
+                    CSIT Student & Full Stack Developer from Nepal focused on AI, web technologies, and meaningful digital experiences.
                 </p>
-                <div class="hero-tagline">
-                    “Building AI-powered platforms focused on career growth and local discovery.”
-                </div>
+                <p class="hero-description">
+                    I enjoy building scalable applications that solve real problems — from local tourism discovery platforms to AI-powered career guidance systems.
+                </p>
                 <div class="hero-tech">
                     <span class="tech-pill">React</span>
                     <span class="tech-pill">Node.js</span>
                     <span class="tech-pill">MongoDB</span>
                     <span class="tech-pill">AI Integration</span>
                     <span class="tech-pill">C++</span>
-                    <span class="tech-pill">JavaScript</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="projects.html" class="btn btn-primary">
+                    <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-folder-open"></i>
                         View Projects
                     </a>
@@ -88,7 +118,7 @@
                         <i class="fas fa-download"></i>
                         Download Resume
                     </a>
-                    <a href="contact.html" class="btn btn-outline">
+                    <a href="#contact" class="btn btn-outline">
                         <i class="fas fa-comments"></i>
                         Contact Me
                     </a>
@@ -107,12 +137,729 @@
             </div>
             <div class="hero-right">
                 <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
                     <img src="images/profile.jpg" alt="Aashish Timalsina" class="hero-image">
                     <div class="hero-image-border"></div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know the person behind the code</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="profile-card">
+                        <div class="profile-image-wrapper">
+                            <img src="images/profile.jpg" alt="Aashish Timalsina" class="profile-image">
+                            <div class="profile-glow"></div>
+                        </div>
+                        <h3 class="profile-name">Aashish Timalsina</h3>
+                        <p class="profile-role">Full Stack Developer • AI Enthusiast</p>
+                        <div class="profile-stats">
+                            <div class="profile-stat">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Technologies Learned</div>
+                            </div>
+                            <div class="profile-stat">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Hackathons Participated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-right">
+                    <div class="about-story">
+                        <p class="about-lead">
+                            I'm a BSc CSIT student at Academia International College, where I'm building a strong foundation in computer science, algorithms, and software development.
+                        </p>
+                        <p class="about-text">
+                            My interest in technology started back in high school, when I realized how apps and websites could solve real problems around me—like helping local businesses reach more customers or making tourist information easier to find. That curiosity led me to explore modern web development and AI integration.
+                        </p>
+                        <p class="about-text">
+                            Today, I focus on building meaningful products that combine clean, user-friendly design with practical functionality. I'm particularly drawn to projects that address local challenges in Nepal, using technology to create positive impact.
+                        </p>
+                        <p class="about-text">
+                            When I'm not coding, I'm usually experimenting with new frameworks, reading about AI advancements, or brainstorming ideas for my next project. I believe in continuous learning and staying curious about how technology can make people's lives easier.
+                        </p>
+                    </div>
+                    
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Impact-Driven</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-code"></i>
+                            <span>Quality Code</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Continuous Growth</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Let's Work Together
+                        </a>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class="fas fa-folder-open"></i>
+                            View My Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects That Solve Real Problems</h2>
+                <p class="section-subtitle">Here are some of the projects I've built focusing on AI, local discovery, and personalized digital experiences.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 - Featured -->
+                <div class="project-card featured">
+                    <div class="project-badge">
+                        <i class="fas fa-star"></i>
+                        Featured Project
+                    </div>
+                    <div class="project-image">
+                        <img src="images/logo.png" alt="Explore Nepal" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Explore Nepal</h3>
+                        <p class="project-description">
+                            An AI-powered tourism discovery platform helping users travel like locals and discover hidden gems across Nepal.
+                        </p>
+                        
+                        <div class="problem-statement">
+                            <h4><i class="fas fa-exclamation-circle"></i> Problem Statement</h4>
+                            <p>Tourists often miss authentic local festivals, hidden destinations, and smaller cultural experiences because mainstream tourism overshadows them.</p>
+                        </div>
+                        
+                        <div class="solution-overview">
+                            <h4><i class="fas fa-lightbulb"></i> Solution Overview</h4>
+                            <p>An AI-powered platform that suggests personalized local experiences, festivals, and off-the-beaten-path destinations based on user preferences.</p>
+                        </div>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Local event discovery</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Personalized recommendations</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Hidden destinations</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Travel-like-a-local concept</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Smart recommendation system</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Gemini API</span>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn primary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                            <a href="#" class="project-btn secondary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-career-tantra.jpg" alt="Career Tantra" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Career Tantra</h3>
+                        <p class="project-description">
+                            An AI-powered career navigation platform helping students discover personalized learning roadmaps and career guidance.
+                        </p>
+                        
+                        <div class="problem-statement">
+                            <h4><i class="fas fa-exclamation-circle"></i> Problem Statement</h4>
+                            <p>Students often struggle to find the right career path and don't have access to personalized guidance tailored to their interests and skills.</p>
+                        </div>
+                        
+                        <div class="solution-overview">
+                            <h4><i class="fas fa-lightbulb"></i> Solution Overview</h4>
+                            <p>AI-driven career platform that suggests personalized learning paths, skill development resources, and career opportunities.</p>
+                        </div>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dynamic roadmap engine</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>AI-powered recommendations</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Career guidance system</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Personalized learning paths</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">AI APIs</span>
+                            <span class="tech-pill">MongoDB</span>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn primary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                            <a href="#" class="project-btn secondary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project-attendance.jpg" alt="Attendance Management System" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Attendance Management System</h3>
+                        <p class="project-description">
+                            A C++ OOP-based attendance management system designed for managing and tracking student attendance efficiently.
+                        </p>
+                        
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Attendance tracking</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>OOP concepts implementation</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Student management</span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-pill">C++</span>
+                            <span class="tech-pill">OOP</span>
+                        </div>
+                        
+                        <div class="project-buttons">
+                            <a href="#" class="project-btn primary">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Timeline</h2>
+                <p class="section-subtitle">My journey in tech and development</p>
+            </div>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3 class="timeline-title">Attendance Management System</h3>
+                        <span class="timeline-category">Project</span>
+                        <p class="timeline-description">
+                            My first major project — built an attendance management system using C++ and OOP concepts. Great learning experience for object-oriented programming.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="timeline-title">Learning Full Stack Development & AI Integration</h3>
+                        <span class="timeline-category">Learning Milestone</span>
+                        <p class="timeline-description">
+                            Started diving deep into full stack web development with React and Node.js, while also exploring AI integration and how it can enhance applications.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">AI APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3 class="timeline-title">Explore Nepal Hackathon Project</h3>
+                        <span class="timeline-category">Hackathon</span>
+                        <p class="timeline-description">
+                            Participated in a hackathon and built Explore Nepal — an AI-powered tourism discovery platform focusing on authentic local experiences.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Hackathon</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Tourism</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - Present</span>
+                        <h3 class="timeline-title">Developed Career Tantra</h3>
+                        <span class="timeline-category">Project</span>
+                        <p class="timeline-description">
+                            Created Career Tantra — an AI-powered career navigation platform helping students find personalized learning roadmaps and career guidance.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">AI</span>
+                            <span class="tag">Career Guidance</span>
+                            <span class="tag">Full Stack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="skills-intro">Here are the technologies and tools I work with, categorized by area of expertise. Some are core skills, others are areas I'm actively learning and exploring.</p>
+            
+            <p class="skills-disclaimer">
+                <i class="fas fa-info-circle"></i> 
+                Disclaimer: These skill sets are just for representation and may include roadmap or target skills I'm working towards.
+            </p>
+            
+            <div class="skills-categories">
+                <!-- Frontend Category -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-proficiency="90">
+                            <div class="skill-info">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="85">
+                            <div class="skill-info">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="80">
+                            <div class="skill-info">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="70">
+                            <div class="skill-info">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="65">
+                            <div class="skill-info">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Category -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-proficiency="75">
+                            <div class="skill-info">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="70">
+                            <div class="skill-info">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Express.js</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Category -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-proficiency="70">
+                            <div class="skill-info">
+                                <i class="fas fa-leaf"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="60">
+                            <div class="skill-info">
+                                <i class="fas fa-fire"></i>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming Languages Category -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-proficiency="80">
+                            <div class="skill-info">
+                                <i class="fab fa-cuttlefish"></i>
+                                <span>C++</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="85">
+                            <div class="skill-info">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="80">
+                            <div class="skill-info">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Tools Category -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-proficiency="85">
+                            <div class="skill-info">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="80">
+                            <div class="skill-info">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="70">
+                            <div class="skill-info">
+                                <i class="fas fa-robot"></i>
+                                <span>Gemini API</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="65">
+                            <div class="skill-info">
+                                <i class="fas fa-brain"></i>
+                                <span>OpenAI API</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-proficiency="75">
+                            <div class="skill-info">
+                                <i class="fab fa-figma"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p>I am studying BSc in Computer Science and Information Technology (BSc CSIT) at Academia International College, affiliated with Tribhuvan University. My coursework includes Object-Oriented Programming, Data Structures and Algorithms, Statistics, Discrete Structures, Microprocessor, and Computer Graphics, which have helped me build a solid foundation in computer science.</p>
+            <br>
+            <div class="education-item">
+                <h3>Bachelor of Science in Computer Science and Information Technology (BSc CSIT)</h3>
+                <h4>Academia International College (Tribhuvan University)</h4>
+                <p class="date">2024 - 2028</p>
+                <p>Relevant coursework: Object-Oriented Programming, Data Structures and Algorithms, Statistics, Discrete Structures, Microprocessor, Computer Graphics</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <p>I have completed online certifications in Python programming and participated in web development workshops at the college level. These experiences have enhanced my practical skills and motivated me to continue learning new technologies.</p>
+            <br>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <h3>Python Programming Certification</h3>
+                    <p>Completed online certification in Python programming.</p>
+                </div>
+                <div class="achievement-item">
+                    <h3>Web Development Workshop</h3>
+                    <p>Participated in web development workshops at the college level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let’s Build Something Amazing Together</h2>
+                <p>Feel free to reach out for collaborations, opportunities, or just to say hello!</p>
+            </div>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:aashish.tim@gmail.com">aashish.tim@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/aashish42-JM" target="_blank">github.com/aashish42-JM</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/aashish-timalsina/" target="_blank">linkedin.com/in/aashish-timalsina</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Lalitpur, Nepal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <div class="toast-message"></div>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
 
     <footer>
         <div class="container">
