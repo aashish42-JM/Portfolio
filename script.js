@@ -79,12 +79,12 @@ function trackScrollDepth() {
 document.addEventListener('DOMContentLoaded', () => {
     trackPageView(document.title);
     
-    // Set initial animated elements to hidden
+    // Set initial animated elements to hidden (subtle)
     const animatedElements = document.querySelectorAll('.about-left, .about-right, .profile-card, .project-card, .timeline-item, .education-item, .achievement-item, .skill-category-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
     });
     
     // Initialize skill progress bars as a fallback
@@ -196,17 +196,26 @@ scrollToTopBtn?.addEventListener('click', () => {
 
 // Intersection Observer for scroll animations
 const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 80);
+            const el = entry.target;
+            // Check if it's a skill progress bar
+            if (el.classList.contains('skill-progress')) {
+                const width = el.getAttribute('data-width') || '80%';
+                el.style.width = width;
+            } else {
+                // For other animated elements
+                const delay = index * 50;
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, delay);
+            }
             animationObserver.unobserve(entry.target);
         }
     });
@@ -215,11 +224,6 @@ const animationObserver = new IntersectionObserver((entries) => {
 // Observe timeline items
 timelineItems.forEach(item => {
     animationObserver.observe(item);
-});
-
-// Observe skill progress bars
-skillProgressBars.forEach(bar => {
-    animationObserver.observe(bar);
 });
 
 // Observe project cards
@@ -252,59 +256,9 @@ skillCategoryCards.forEach(card => {
 // Observe profile card
 if (profileCard) animationObserver.observe(profileCard);
 
-// Typing effect for hero section (if available)
-const typingText = document.getElementById('typing-text');
-if (typingText) {
-    const texts = [
-        'Building AI-powered platforms',
-        'Full Stack Developer',
-        'AI Enthusiast',
-        'CSIT Student'
-    ];
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-        const currentText = texts[textIndex];
-        
-        if (isDeleting) {
-            typingText.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingText.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        if (!isDeleting && charIndex === currentText.length) {
-            isDeleting = true;
-            setTimeout(typeEffect, 2000);
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            setTimeout(typeEffect, 500);
-        } else {
-            setTimeout(typeEffect, isDeleting ? 40 : 80);
-        }
-    }
-
-    typeEffect();
-}
-
-// Animate skill progress bars when they come into view
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const bar = entry.target;
-            const width = bar.getAttribute('data-width') || '80%';
-            bar.style.width = width;
-            skillObserver.unobserve(bar);
-        }
-    });
-}, { threshold: 0.5 });
-
+// Observe skill progress bars
 skillProgressBars.forEach(bar => {
-    skillObserver.observe(bar);
+    animationObserver.observe(bar);
 });
 
 // Smooth scrolling for anchor links
