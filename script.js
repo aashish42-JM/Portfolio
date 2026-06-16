@@ -144,11 +144,28 @@ navLinks?.querySelectorAll('a').forEach(link => {
 let isDarkMode = localStorage.getItem('darkMode') === 'true';
 
 function updateTheme() {
+    // Smooth theme transition helper
+    document.body.classList.add('theme-transition');
+    window.setTimeout(() => document.body.classList.remove('theme-transition'), 600);
+
     document.body.classList.toggle('dark-mode', isDarkMode);
     if (themeToggle) {
         const icon = themeToggle.querySelector('i');
         if (icon) {
-            icon.className = isDarkMode ? 'fas fa-moon' : 'fas fa-sun';
+            // animate icon with class toggle for CSS-driven animation
+            themeToggle.classList.add('toggling');
+            // swap classes without removing other possible classes
+            if (isDarkMode) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+            // update aria-pressed for accessibility
+            themeToggle.setAttribute('aria-pressed', String(isDarkMode));
+            // remove toggling state after animation
+            setTimeout(() => themeToggle.classList.remove('toggling'), 600);
         }
     }
 }
@@ -348,3 +365,139 @@ if (contactForm) {
         }
     });
 }
+
+/* ---------------------------------------------------------------------------
+   Cinematic Animation Enhancements (stagger reveals, parallax, tilt, glow)
+   - Optimized with requestAnimationFrame
+   - Disabled when prefers-reduced-motion or on touch-only devices
+   --------------------------------------------------------------------------- */
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+// Stagger reveal helper: mark child --stagger-index and add reveal-in
+function staggerReveal(container, staggerDelay = 70) {
+    const children = Array.from(container.querySelectorAll('.reveal'));
+    children.forEach((child, i) => {
+        child.style.setProperty('--stagger-index', i);
+        child.classList.add('reveal-in');
+        // Ensure final state
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0) scale(1)';
+        child.style.filter = 'blur(0)';
+    });
+}
+
+// Enhanced observer for section reveals with staggering
+if (!prefersReducedMotion) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                // reveal section title and children with stagger
+                const reveals = section.querySelectorAll('.reveal');
+                if (reveals.length > 0) {
+                    reveals.forEach((el, idx) => {
+                        el.style.transitionDelay = `${idx * 80}ms`;
+                        el.classList.add('reveal-in');
+                    });
+                }
+                // if container has .stagger, call helper
+                if (section.classList.contains('stagger')) {
+                    staggerReveal(section);
+                }
+                sectionObserver.unobserve(section);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('section').forEach(s => sectionObserver.observe(s));
+}
+
+// Parallax on scroll for elements with data-parallax-depth
+const parallaxEls = Array.from(document.querySelectorAll('[data-parallax]'));
+let parallaxTicking = false;
+function onParallaxScroll() {
+    if (parallaxTicking) return;
+    parallaxTicking = true;
+    requestAnimationFrame(() => {
+        const scrolled = window.scrollY;
+        parallaxEls.forEach(el => {
+            const depth = parseFloat(el.getAttribute('data-parallax')) || 0.2;
+            const rect = el.getBoundingClientRect();
+            const offset = (scrolled - (rect.top + window.scrollY)) * depth * -0.06;
+            el.style.transform = `translate3d(0, ${offset}px, 0)`;
+        });
+        parallaxTicking = false;
+    });
+}
+if (!isTouchDevice) {
+    window.addEventListener('scroll', onParallaxScroll, { passive: true });
+    onParallaxScroll();
+}
+
+// Mouse reactive glow and tilt for cards
+const tiltTargets = Array.from(document.querySelectorAll('.tilt, .project-card, .skill-category-card, .card'));
+let tiltState = { hovering: null };
+
+function handleCardMove(e) {
+    const target = tiltState.hovering;
+    if (!target) return;
+    if (prefersReducedMotion || isTouchDevice) return;
+    const rect = target.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) / rect.width;
+    const my = (e.clientY - rect.top) / rect.height;
+    const px = Math.min(Math.max(mx, 0), 1) * 100;
+    const py = Math.min(Math.max(my, 0), 1) * 100;
+
+    // apply CSS variables for glow position
+    target.style.setProperty('--mx', `${px}%`);
+    target.style.setProperty('--my', `${py}%`);
+
+    // tilt transform
+    const rotateY = (mx - 0.5) * 8; // degrees
+    const rotateX = (0.5 - my) * 6; // degrees
+    const translateZ = 8;
+    target.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
+}
+
+function handleCardEnter(e) {
+    const el = e.currentTarget;
+    if (prefersReducedMotion || isTouchDevice) return;
+    tiltState.hovering = el;
+    el.classList.add('tilt-active');
+    // create glow element if missing
+    if (!el.querySelector('.card-glow')) {
+        const glow = document.createElement('div');
+        glow.className = 'card-glow';
+        el.appendChild(glow);
+    }
+}
+
+function handleCardLeave(e) {
+    const el = e.currentTarget;
+    tiltState.hovering = null;
+    el.classList.remove('tilt-active');
+    // reset transform smoothly
+    el.style.transform = '';
+    // fade out glow
+    const glow = el.querySelector('.card-glow');
+    if (glow) {
+        glow.style.opacity = '0';
+        setTimeout(() => { if (glow.parentNode) glow.parentNode.removeChild(glow); }, 350);
+    }
+}
+
+if (!isTouchDevice && !prefersReducedMotion) {
+    tiltTargets.forEach(t => {
+        t.addEventListener('mousemove', handleCardMove);
+        t.addEventListener('mouseenter', handleCardEnter);
+        t.addEventListener('mouseleave', handleCardLeave);
+    });
+    // global mousemove to update hovered card via rAF
+    document.addEventListener('mousemove', (e) => {
+        if (prefersReducedMotion || isTouchDevice) return;
+        requestAnimationFrame(() => handleCardMove(e));
+    });
+}
+
