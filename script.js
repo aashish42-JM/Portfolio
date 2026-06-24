@@ -16,6 +16,11 @@ const profileCard = document.querySelector('.profile-card');
 const scrollProgress = document.getElementById('scroll-progress');
 const header = document.querySelector('header');
 const allNavLinks = document.querySelectorAll('.nav-links a');
+const journeyCommentForm = document.getElementById('journey-comment-form');
+const journeyFeedbackForm = document.getElementById('journey-feedback-form');
+const journeyCommentsList = document.getElementById('journey-comments-list');
+const journeyFeedbackList = document.getElementById('journey-feedback-list');
+const reactionGroups = document.querySelectorAll('[data-reaction-group]');
 
 // ========================================
 // ANALYTICS: Event Tracking Functions
@@ -23,7 +28,7 @@ const allNavLinks = document.querySelectorAll('.nav-links a');
 function trackEvent(eventName, eventParams = {}) {
     if (typeof gtag !== 'undefined') {
         gtag('event', eventName, eventParams);
-        console.log(`📊 Analytics Event:', eventName, eventParams);
+        console.log('📊 Analytics Event:', eventName, eventParams);
     } else {
         console.log('📊 Analytics Event (GTAG not loaded):', eventName, eventParams);
     }
@@ -62,10 +67,131 @@ function trackProjectInteraction(projectName, action) {
     });
 }
 
+// Journey community interaction storage
+const JOURNEY_STORAGE_KEYS = {
+    reactions: 'journeyReactions',
+    comments: 'journeyComments',
+    feedback: 'journeyFeedback'
+};
+
+function readJourneyStorage(key, fallbackValue) {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallbackValue;
+    } catch (error) {
+        console.error('Journey storage read error:', error);
+        return fallbackValue;
+    }
+}
+
+function writeJourneyStorage(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+        console.error('Journey storage write error:', error);
+    }
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+}
+
+function renderJourneyReactions() {
+    const savedReactions = readJourneyStorage(JOURNEY_STORAGE_KEYS.reactions, {});
+
+    reactionGroups.forEach(group => {
+        group.querySelectorAll('.reaction-chip').forEach(button => {
+            const reactionKey = button.dataset.reaction;
+            const count = savedReactions[reactionKey] || 0;
+            const countNode = button.querySelector('strong');
+            if (countNode) {
+                countNode.textContent = String(count);
+            }
+            button.classList.toggle('selected', count > 0);
+        });
+    });
+}
+
+function renderJourneyComments() {
+    if (!journeyCommentsList) return;
+
+    const savedComments = readJourneyStorage(JOURNEY_STORAGE_KEYS.comments, []);
+    if (savedComments.length === 0) {
+        journeyCommentsList.innerHTML = '<p class="community-empty">No comments yet. Be the first to leave one.</p>';
+        return;
+    }
+
+    journeyCommentsList.innerHTML = savedComments.slice().reverse().map(comment => `
+        <article class="community-comment card">
+            <div class="community-comment-header">
+                <strong>${escapeHtml(comment.name)}</strong>
+                <span>${escapeHtml(comment.timestamp)}</span>
+            </div>
+            <p>${escapeHtml(comment.message)}</p>
+        </article>
+    `).join('');
+}
+
+function renderJourneyFeedback() {
+    if (!journeyFeedbackList) return;
+
+    const savedFeedback = readJourneyStorage(JOURNEY_STORAGE_KEYS.feedback, []);
+    if (savedFeedback.length === 0) {
+        journeyFeedbackList.innerHTML = '<p class="community-empty">No feedback submitted yet.</p>';
+        return;
+    }
+
+    journeyFeedbackList.innerHTML = savedFeedback.slice().reverse().map(item => `
+        <article class="community-comment card">
+            <div class="community-comment-header">
+                <strong>${escapeHtml(item.topic)}</strong>
+                <span>${escapeHtml(item.timestamp)}</span>
+            </div>
+            <p>${escapeHtml(item.message)}</p>
+        </article>
+    `).join('');
+}
+
+function addJourneyComment(name, message) {
+    const savedComments = readJourneyStorage(JOURNEY_STORAGE_KEYS.comments, []);
+    savedComments.push({
+        name,
+        message,
+        timestamp: new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
+    });
+    writeJourneyStorage(JOURNEY_STORAGE_KEYS.comments, savedComments);
+    renderJourneyComments();
+}
+
+function addJourneyFeedback(topic, message) {
+    const savedFeedback = readJourneyStorage(JOURNEY_STORAGE_KEYS.feedback, []);
+    savedFeedback.push({
+        topic,
+        message,
+        timestamp: new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
+    });
+    writeJourneyStorage(JOURNEY_STORAGE_KEYS.feedback, savedFeedback);
+}
+
+function incrementJourneyReaction(reactionKey) {
+    const savedReactions = readJourneyStorage(JOURNEY_STORAGE_KEYS.reactions, {});
+    savedReactions[reactionKey] = (savedReactions[reactionKey] || 0) + 1;
+    writeJourneyStorage(JOURNEY_STORAGE_KEYS.reactions, savedReactions);
+    renderJourneyReactions();
+}
+
 // Track scroll depth
 let maxScrollDepth = 0;
 function trackScrollDepth() {
-    const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+
+    const scrollPercent = Math.round((window.scrollY / docHeight) * 100);
     if (scrollPercent > maxScrollDepth) {
         maxScrollDepth = scrollPercent;
         if (scrollPercent >= 25 && maxScrollDepth < 25) { trackEvent('scroll_depth', { depth: '25%' }); }
@@ -93,6 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const width = bar.getAttribute('data-width') || '80%';
         bar.style.width = width;
     });
+
+    renderJourneyReactions();
+    renderJourneyComments();
+    renderJourneyFeedback();
+
+    updateScrollProgress();
+    updateActiveNavLink();
 });
 
 // Scroll Progress Indicator
@@ -100,6 +233,10 @@ function updateScrollProgress() {
     if (!scrollProgress) return;
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) {
+        scrollProgress.style.width = '0%';
+        return;
+    }
     const progress = (scrollTop / docHeight) * 100;
     scrollProgress.style.width = `${progress}%`;
 }
@@ -108,6 +245,19 @@ function updateScrollProgress() {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 200;
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+    const journeyPaths = new Set(['/journey', '/journey.html']);
+
+    if (journeyPaths.has(currentPath)) {
+        allNavLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.remove('active');
+            if (href === '/journey' || href === 'journey.html' || href === '/journey.html') {
+                link.classList.add('active');
+            }
+        });
+        return;
+    }
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -209,6 +359,55 @@ scrollToTopBtn?.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
+});
+
+window.addEventListener('hashchange', updateActiveNavLink);
+
+reactionGroups.forEach(group => {
+    group.addEventListener('click', (event) => {
+        const button = event.target.closest('.reaction-chip');
+        if (!button) return;
+        incrementJourneyReaction(button.dataset.reaction);
+    });
+});
+
+journeyCommentForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!journeyCommentForm.checkValidity()) {
+        journeyCommentForm.reportValidity();
+        return;
+    }
+
+    const nameField = journeyCommentForm.querySelector('#journey-name');
+    const messageField = journeyCommentForm.querySelector('#journey-message');
+    const name = nameField.value.trim();
+    const message = messageField.value.trim();
+
+    if (!name || !message) return;
+
+    addJourneyComment(name, message);
+    journeyCommentForm.reset();
+    showToast('Comment posted locally.', 'success');
+});
+
+journeyFeedbackForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!journeyFeedbackForm.checkValidity()) {
+        journeyFeedbackForm.reportValidity();
+        return;
+    }
+
+    const topicField = journeyFeedbackForm.querySelector('#feedback-topic');
+    const messageField = journeyFeedbackForm.querySelector('#feedback-message');
+    const topic = topicField.value;
+    const message = messageField.value.trim();
+
+    if (!message) return;
+
+    addJourneyFeedback(topic, message);
+    journeyFeedbackForm.reset();
+    renderJourneyFeedback();
+    showToast('Feedback saved locally. Thank you.', 'success');
 });
 
 // Intersection Observer for scroll animations
@@ -332,9 +531,23 @@ const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            showToast('Please fill out the form correctly before sending.', 'error');
+            return;
+        }
         
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
+        const formEndpoint = contactForm.getAttribute('action') || 'https://formspree.io/f/mreazaaw';
+        const requestTimeoutMs = 15000;
+
+        if (!navigator.onLine) {
+            console.error('Form submission blocked: browser is offline.');
+            showToast('You appear to be offline. Please reconnect and try again.', 'error');
+            return;
+        }
         
         // Show loading state
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -342,24 +555,69 @@ if (contactForm) {
         
         try {
             const formData = new FormData(contactForm);
-            const response = await fetch('https://formspree.io/f/mreazaaw', {
+            const abortController = new AbortController();
+            const timeoutId = window.setTimeout(() => abortController.abort(), requestTimeoutMs);
+
+            const response = await fetch(formEndpoint, {
                 method: 'POST',
                 body: formData,
                 headers: {
                     'Accept': 'application/json'
-                }
+                },
+                signal: abortController.signal
             });
+            window.clearTimeout(timeoutId);
             
             if (response.ok) {
                 showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
                 contactForm.reset();
             } else {
-                throw new Error('Failed to send message');
+                const contentType = response.headers.get('content-type') || '';
+                let errorMessage = `Failed to send message (${response.status}).`;
+
+                try {
+                    if (contentType.includes('application/json')) {
+                        const data = await response.json();
+                        if (data?.errors?.length) {
+                            errorMessage = data.errors.map((entry) => entry.message).join(' ');
+                        }
+                    } else {
+                        const responseText = await response.text();
+                        if (responseText.trim()) {
+                            errorMessage = responseText.slice(0, 240);
+                        }
+                    }
+                } catch {
+                    // Keep the generic error message when the response body cannot be parsed.
+                }
+
+                console.error('Form submission failed:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    errorMessage
+                });
+                throw new Error(errorMessage);
             }
         } catch (error) {
-            showToast('Oops! Something went wrong. Please try again.', 'error');
+            const isTransportFailure = error?.name === 'AbortError' || /failed to fetch|networkerror|load failed/i.test(error?.message || '');
+
             console.error('Form submission error:', error);
+
+            if (isTransportFailure && !contactForm.dataset.fallbackSubmitted) {
+                contactForm.dataset.fallbackSubmitted = 'true';
+                contactForm.target = '_blank';
+                showToast('Connection issue detected. Retrying with the browser form fallback.', 'error');
+                contactForm.submit();
+                return;
+            }
+
+            showToast(error.message || 'Oops! Something went wrong. Please try again.', 'error');
         } finally {
+            if (contactForm.dataset.fallbackSubmitted) {
+                delete contactForm.dataset.fallbackSubmitted;
+                contactForm.target = '';
+            }
+
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
         }

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Developer Journey of Aashish Timalsina — a public growth journal covering learning, projects, technical focus, and monthly progress.">
+    <meta name="keywords" content="Aashish Timalsina, developer journey, growth journal, roadmap, portfolio, learning progress, monthly progress">
+    <meta name="author" content="Aashish Timalsina">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Developer Journey | Aashish Timalsina">
+    <meta property="og:description" content="A public developer growth journal covering learning, builds, milestones, and monthly progress.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/journey.html">
+    <meta property="og:image" content="https://yourportfolio.com/images/profile.jpg">
+    <meta property="og:site_name" content="Aashish Timalsina Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Developer Journey | Aashish Timalsina">
+    <meta name="twitter:description" content="A public developer growth journal covering learning, builds, milestones, and monthly progress.">
+    <meta name="twitter:image" content="https://yourportfolio.com/images/profile.jpg">
+    <meta name="twitter:creator" content="@yourtwitterhandle">
+
+    <title>Developer Journey | Aashish Timalsina</title>
+    <link rel="icon" href="images/Favicon.png" type="image/png">
+    <link rel="canonical" href="https://yourportfolio.com/journey.html">
+
+    <!-- Google Analytics (replace G-XXXXXXXXXX with your actual GA4 ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            page_path: window.location.pathname,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="photo-container">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="header-photo" id="header-img" loading="eager">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="enlarged-photo" loading="lazy">
+                    </div>
+                    <h1>Aashish Timalsina</h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#experience">Experience</a></li>
+                    <li><a href="index.html#education">Education</a></li>
+                    <li><a href="index.html#achievements">Achievements</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <section class="journey-hero section">
+        <div class="container">
+            <div class="journey-hero-grid">
+                <div class="journey-hero-copy reveal">
+                    <div class="journey-badge">
+                        <i class="fas fa-route"></i>
+                        <span>Developer Journey</span>
+                    </div>
+                    <h1 class="journey-title">A public growth journal for learning, building, and improving.</h1>
+                    <p class="journey-subtitle">
+                        This page tracks what I am learning, what I am shipping, and where my technical focus is heading over time.
+                        It is a roadmap of growth, not a task list.
+                    </p>
+                    <div class="journey-links">
+                        <a href="#what-i-learned" class="btn btn-primary">What I Learned</a>
+                        <a href="#what-i-am-learning" class="btn btn-outline">What I Am Learning</a>
+                        <a href="#future-learning-plans" class="btn btn-secondary">Future Plans</a>
+                    </div>
+                    <div class="journey-stats">
+                        <div class="journey-stat card reveal">
+                            <span class="journey-stat-number">6</span>
+                            <span class="journey-stat-label">Tracked months</span>
+                        </div>
+                        <div class="journey-stat card reveal">
+                            <span class="journey-stat-number">4</span>
+                            <span class="journey-stat-label">Growth areas</span>
+                        </div>
+                        <div class="journey-stat card reveal">
+                            <span class="journey-stat-number">8+</span>
+                            <span class="journey-stat-label">Milestones logged</span>
+                        </div>
+                        <div class="journey-stat card reveal">
+                            <span class="journey-stat-number">1</span>
+                            <span class="journey-stat-label">Public roadmap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="journey-hero-panel card reveal tilt">
+                    <div class="journey-panel-header">
+                        <div>
+                            <p class="journey-panel-kicker">Current snapshot</p>
+                            <h2>June 2026</h2>
+                        </div>
+                        <span class="journey-panel-pill">Active</span>
+                    </div>
+                    <div class="journey-focus-list">
+                        <div class="journey-focus-item">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h3>Learning</h3>
+                                <p>React optimization and Framer Motion for polished interactions.</p>
+                            </div>
+                        </div>
+                        <div class="journey-focus-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <h3>Building</h3>
+                                <p>Portfolio improvements and Career Tantra updates.</p>
+                            </div>
+                        </div>
+                        <div class="journey-focus-item">
+                            <i class="fas fa-sitemap"></i>
+                            <div>
+                                <h3>Focus</h3>
+                                <p>AI integration and system design fundamentals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="journey-streak">
+                        <div class="journey-streak-header">
+                            <span>Growth streak</span>
+                            <span>Recent weeks</span>
+                        </div>
+                        <div class="journey-streak-grid" aria-label="Developer growth streak visualization">
+                            <span class="streak-cell level-0"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-0"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-4"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-0"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-4"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-0"></span>
+                            <span class="streak-cell level-1"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-3"></span>
+                            <span class="streak-cell level-2"></span>
+                            <span class="streak-cell level-1"></span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-i-learned" class="journey-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What I’ve Learned So Far</h2>
+                <p class="section-subtitle">Technical lessons that changed how I build and think.</p>
+            </div>
+            <section id="what-i-am-learning" class="journey-section section">
+                <article class="journey-entry card reveal">
+                    <div class="journey-entry-date">June 2026</div>
+                        <h2 class="section-title">What I’m Learning Right Now</h2>
+                        <p class="section-subtitle">The things I am actively exploring this month.</p>
+                        <p>Learned where unnecessary re-renders cost the most and how to keep the UI responsive without sacrificing clarity or structure.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">React</span>
+                            <span class="journey-tag">Performance</span>
+                            <span class="journey-tag">UI polish</span>
+                                <h3>React performance patterns</h3>
+                                <p>Exploring memoization boundaries, component composition, and when to keep interactions simple instead of over-optimizing them.</p>
+                </article>
+                                    <span class="journey-tag">React</span>
+                                    <span class="journey-tag">Optimization</span>
+                                    <span class="journey-tag">UI</span>
+                        <h3>Framer Motion for purposeful animation</h3>
+                        <p>Explored animation timing, hierarchy, and restraint so motion supports the content instead of distracting from it.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">Framer Motion</span>
+                            <span class="journey-tag">Motion design</span>
+                            <span class="journey-tag">Interaction</span>
+                                <h3>Framer Motion details</h3>
+                                <p>Practicing animation timing and easing to keep motion expressive, subtle, and useful on longer scrolling pages.</p>
+                </article>
+                                    <span class="journey-tag">Framer Motion</span>
+                                    <span class="journey-tag">Animation</span>
+                                    <span class="journey-tag">Motion systems</span>
+                        <h3>Production-grade form handling</h3>
+                        <p>Refined validation, timeout handling, and error reporting so contact flows fail loudly instead of silently.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">Reliability</span>
+                            <span class="journey-tag">UX</span>
+                            <span class="journey-tag">Validation</span>
+                                <h3>System design fundamentals</h3>
+                                <p>Learning how to think in flows, boundaries, and scalable data paths instead of only focusing on individual screens.</p>
+                </article>
+                                    <span class="journey-tag">Architecture</span>
+                                    <span class="journey-tag">APIs</span>
+                                    <span class="journey-tag">Scalability</span>
+
+    <section id="what-i-built" class="journey-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What I Built</h2>
+                <p class="section-subtitle">Shipping logs that show tangible progress.</p>
+            </div>
+            <section id="what-i-built" class="journey-section section">
+                <article class="journey-entry card reveal">
+                    <div class="journey-entry-date">June 2026</div>
+                        <h2 class="section-title">What I’ve Built</h2>
+                        <p class="section-subtitle">Shipping logs that show tangible progress.</p>
+                        <p>Made the site more reliable by fixing broken links, tightening route handling, and removing content visibility regressions.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">Portfolio</span>
+                            <span class="journey-tag">Accessibility</span>
+                            <span class="journey-tag">Reliability</span>
+                                <h3>Portfolio improvements</h3>
+                                <p>Made the site more reliable by fixing broken links, tightening route handling, and removing content visibility regressions.</p>
+                </article>
+                                    <span class="journey-tag">Portfolio</span>
+                                    <span class="journey-tag">Accessibility</span>
+                                    <span class="journey-tag">Reliability</span>
+                        <h3>Career Tantra updates</h3>
+                        <p>Continued refining the career guidance concept with a stronger structure for roadmap-driven learning and AI-assisted suggestions.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">Career Tantra</span>
+                            <span class="journey-tag">AI</span>
+                            <span class="journey-tag">Roadmaps</span>
+                                <h3>Career Tantra updates</h3>
+                                <p>Continued refining the career guidance concept with a stronger structure for roadmap-driven learning and AI-assisted suggestions.</p>
+                </article>
+                                    <span class="journey-tag">Career Tantra</span>
+                                    <span class="journey-tag">AI</span>
+                                    <span class="journey-tag">Roadmaps</span>
+                        <h3>Static deployment hardening</h3>
+                        <p>Documented the contact workflow, added fallback handling, and kept the build simple enough to deploy reliably on Netlify.</p>
+                        <div class="journey-tags">
+                            <span class="journey-tag">Netlify</span>
+                            <div class="journey-entry-date">May 2026</div>
+                            <span class="journey-tag">Deployment</span>
+                                <h3>Static deployment hardening</h3>
+                                <p>Documented the contact workflow, added fallback handling, and kept the build simple enough to deploy reliably on Netlify.</p>
+                </article>
+                                    <span class="journey-tag">Netlify</span>
+                                    <span class="journey-tag">Forms</span>
+                                    <span class="journey-tag">Deployment</span>
+
+    <section id="current-focus" class="journey-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Current Focus</h2>
+                <p class="section-subtitle">The skills and systems I am actively strengthening right now.</p>
+            </div>
+            <section id="future-learning-plans" class="journey-section section">
+                <article class="journey-entry card reveal">
+                    <div class="journey-entry-date">June 2026</div>
+                        <h2 class="section-title">Future Learning Plans</h2>
+                        <p class="section-subtitle">What I plan to study next and how it will shape future work.</p>
+                        <p>Working on practical ways to include AI features that improve usefulness rather than adding novelty for its own sake.</p>
+                    <div class="journey-entry-grid">
+                        <article class="journey-entry card reveal">
+                            <div class="journey-entry-date">Q3 2026</div>
+                            <div class="journey-entry-content">
+                                <h3>Advanced AI workflow integration</h3>
+                                <p>Plan to build more practical AI-enhanced features that support navigation, recommendations, and useful product decisions.</p>
+                                <div class="journey-tags">
+                                    <span class="journey-tag">AI workflows</span>
+                                    <span class="journey-tag">Product design</span>
+                                    <span class="journey-tag">Automation</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="journey-entry card reveal">
+                            <div class="journey-entry-date">Q3 2026</div>
+                            <div class="journey-entry-content">
+                                <h3>System design and data flow</h3>
+                                <p>Plan to deepen architecture knowledge by studying data flow, scaling patterns, and maintainable app structure.</p>
+                                <div class="journey-tags">
+                                    <span class="journey-tag">System design</span>
+                                    <span class="journey-tag">APIs</span>
+                                    <span class="journey-tag">Scaling</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="journey-entry card reveal">
+                            <div class="journey-entry-date">Q4 2026</div>
+                            <div class="journey-entry-content">
+                                <h3>Public learning archive</h3>
+                                <p>Plan to keep a cleaner archive of lessons, references, and milestones so growth is easier to review over time.</p>
+                                <div class="journey-tags">
+                                    <span class="journey-tag">Documentation</span>
+                                    <span class="journey-tag">Knowledge base</span>
+                                    <span class="journey-tag">Consistency</span>
+                                </div>
+                            </div>
+                        </article>
+                    <div class="month-card-header">
+                        <h3>June 2026</h3>
+                        <span class="journey-panel-pill">Active</span>
+
+            <section id="community-feedback" class="journey-section section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Reactions, Comments, and Feedback</h2>
+                        <p class="section-subtitle">Visitors can react to the journey, leave comments, and send project feedback without leaving this page.</p>
+                    </div>
+                    <div class="community-grid">
+                        <div class="community-panel card reveal">
+                            <div class="community-panel-header">
+                                <h3>React to the journey</h3>
+                                <p>Let me know what resonates most.</p>
+                            </div>
+                            <div class="reaction-grid" data-reaction-group="journey">
+                                <button type="button" class="reaction-chip" data-reaction="like"><span>Like</span><strong>0</strong></button>
+                                <button type="button" class="reaction-chip" data-reaction="inspiring"><span>Inspiring</span><strong>0</strong></button>
+                                <button type="button" class="reaction-chip" data-reaction="helpful"><span>Helpful</span><strong>0</strong></button>
+                                <button type="button" class="reaction-chip" data-reaction="smart"><span>Smart</span><strong>0</strong></button>
+                            </div>
+                        </div>
+
+                        <div class="community-panel card reveal">
+                            <div class="community-panel-header">
+                                <h3>Leave a comment</h3>
+                                <p>Share thoughts about my learning, builds, or direction.</p>
+                            </div>
+                            <form id="journey-comment-form" class="community-form">
+                                <div class="form-group">
+                                    <label for="journey-name">Name</label>
+                                    <input type="text" id="journey-name" name="name" placeholder="Your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="journey-message">Comment</label>
+                                    <textarea id="journey-message" name="message" rows="4" placeholder="Write a thoughtful note about the journey or a project..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
+
+                        <div class="community-panel card reveal community-panel-wide">
+                            <div class="community-panel-header">
+                                <h3>Project feedback</h3>
+                                <p>Leave a quick reaction on what to improve next.</p>
+                            </div>
+                            <form id="journey-feedback-form" class="community-form community-feedback-form">
+                                <div class="form-group">
+                                    <label for="feedback-topic">Topic</label>
+                                    <select id="feedback-topic" name="topic" required>
+                                        <option value="Journey">Journey</option>
+                                        <option value="Projects">Projects</option>
+                                        <option value="Learning">Learning</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feedback-message">Feedback</label>
+                                    <textarea id="feedback-message" name="message" rows="4" placeholder="Tell me what should be clearer, stronger, or improved next..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-secondary">Send Feedback</button>
+                            </form>
+                            <div class="community-divider"></div>
+                            <div id="journey-feedback-list" class="community-list"></div>
+                        </div>
+
+                        <div class="community-panel card reveal community-panel-wide">
+                            <div class="community-panel-header">
+                                <h3>Recent community notes</h3>
+                                <p>Visible on this device and stored locally.</p>
+                            </div>
+                            <div id="journey-comments-list" class="community-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                    </div>
+                    <div class="month-summary-list">
+                        <div>
+                            <strong>Learned:</strong>
+                            <p>React optimization, Framer Motion, and better animation restraint.</p>
+                        </div>
+                        <div>
+                            <strong>Built:</strong>
+                            <p>Portfolio improvements and Career Tantra updates.</p>
+                        </div>
+                        <div>
+                            <strong>Current focus:</strong>
+                            <p>AI integration and system design fundamentals.</p>
+                        </div>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag">React</span>
+                        <span class="journey-tag">Motion</span>
+                        <span class="journey-tag">AI</span>
+                    </div>
+                </article>
+
+                <article class="month-card card reveal">
+                    <div class="month-card-header">
+                        <h3>May 2026</h3>
+                        <span class="journey-panel-pill">Shipping</span>
+                    </div>
+                    <div class="month-summary-list">
+                        <div>
+                            <strong>Learned:</strong>
+                            <p>Form validation flows and static site deployment patterns.</p>
+                        </div>
+                        <div>
+                            <strong>Built:</strong>
+                            <p>Contact reliability fixes and improved feedback states.</p>
+                        </div>
+                        <div>
+                            <strong>Current focus:</strong>
+                            <p>Cleaning up production friction and tightening UX reliability.</p>
+                        </div>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag">Forms</span>
+                        <span class="journey-tag">Netlify</span>
+                        <span class="journey-tag">UX</span>
+                    </div>
+                </article>
+
+                <article class="month-card card reveal">
+                    <div class="month-card-header">
+                        <h3>April 2026</h3>
+                        <span class="journey-panel-pill">Foundation</span>
+                    </div>
+                    <div class="month-summary-list">
+                        <div>
+                            <strong>Learned:</strong>
+                            <p>How to structure progress notes and separate visible work from planned work.</p>
+                        </div>
+                        <div>
+                            <strong>Built:</strong>
+                            <p>Timeline logging habits and a better review system for shipped work.</p>
+                        </div>
+                        <div>
+                            <strong>Current focus:</strong>
+                            <p>Creating a clear pattern for future growth entries and milestones.</p>
+                        </div>
+                    </div>
+                    <div class="journey-tags">
+                        <span class="journey-tag">Process</span>
+                        <span class="journey-tag">Reflection</span>
+                        <span class="journey-tag">Consistency</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Aashish Timalsina. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
