@@ -44,13 +44,17 @@
     --primary-hover: #2563eb;
     --accent: #8b5cf6;
     --accent-secondary: #ec4899;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
-    --background: #0f172a;
-    --surface: rgba(15, 23, 42, 0.4);
-    --surface-secondary: rgba(30, 41, 59, 0.5);
-    --border: rgba(148, 163, 184, 0.1);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-dark: #0f172a;
+    --text-light: #475569;
+    --text-white: #ffffff;
+    --text-color: var(--text-primary);
+    --background: #f8fafc;
+    --surface: rgba(255, 255, 255, 0.9);
+    --surface-secondary: rgba(241, 245, 249, 0.95);
+    --border: rgba(148, 163, 184, 0.18);
     --border-hover: rgba(56, 189, 248, 0.4);
     --border-accent: rgba(139, 92, 246, 0.3);
 
@@ -80,15 +84,22 @@
     --glow-primary: 0 0 20px rgba(59, 130, 246, 0.2), inset 0 0 20px rgba(59, 130, 246, 0.05);
     --glow-accent: 0 0 16px rgba(139, 92, 246, 0.15);
     --glow-border: 0 0 12px rgba(59, 130, 246, 0.15), inset 0 0 16px rgba(59, 130, 246, 0.03);
-    --text-dark: #0f172a;
-    --text-light: rgba(248, 250, 252, 0.78);
-    --bg-white: #f8fafc;
-    --bg-secondary: rgba(248, 250, 252, 0.95);
-    --border-color: rgba(148, 163, 184, 0.18);
+    --bg-white: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: rgba(148, 163, 184, 0.22);
+    --section-alt-bg: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-bg-hover: rgba(255, 255, 255, 0.98);
+    --panel-bg: rgba(255, 255, 255, 0.88);
+    --panel-bg-hover: rgba(255, 255, 255, 0.96);
+    --input-bg: #ffffff;
+    --input-text: #0f172a;
+    --nav-bg: rgba(255, 255, 255, 0.84);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.94);
     --primary-color: var(--primary);
     --secondary-color: var(--accent);
     --gradient-secondary: linear-gradient(135deg, var(--primary), var(--accent));
-    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
 
     /* Typography - Modern, professional hierarchy */
     --font-size-xs: 0.75rem;
@@ -121,11 +132,27 @@ body.dark-mode {
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
+    --text-dark: #f8fafc;
+    --text-light: #cbd5e1;
+    --text-white: #f8fafc;
+    --text-color: var(--text-primary);
     --background: #0f172a;
     --surface: rgba(15, 23, 42, 0.4);
     --surface-secondary: rgba(30, 41, 59, 0.5);
     --border: rgba(148, 163, 184, 0.1);
     --border-hover: rgba(59, 130, 246, 0.4);
+    --bg-white: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-color: rgba(51, 65, 85, 0.6);
+    --section-alt-bg: #111827;
+    --card-bg: rgba(15, 23, 42, 0.35);
+    --card-bg-hover: rgba(15, 23, 42, 0.45);
+    --panel-bg: rgba(15, 23, 42, 0.54);
+    --panel-bg-hover: rgba(15, 23, 42, 0.64);
+    --input-bg: #1e293b;
+    --input-text: #f1f5f9;
+    --nav-bg: rgba(15, 23, 42, 0.82);
+    --nav-bg-scrolled: rgba(15, 23, 42, 0.94);
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
@@ -1324,7 +1351,7 @@ section {
 }
 
 section:nth-child(even) {
-    background-color: var(--bg-white);
+    background-color: var(--section-alt-bg);
 }
 
 section h2 {
@@ -1497,7 +1524,7 @@ section > .container > p:first-of-type {
 .profile-name {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--text-primary);
     margin: 0;
 }
 
@@ -1552,7 +1579,7 @@ section > .container > p:first-of-type {
 .about-lead {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-primary);
     line-height: 1.7;
     margin: 0;
 }
@@ -4719,4 +4746,173 @@ body:not(.dark-mode) .community-form select {
         width: 100%;
         justify-content: center;
     }
+}
+
+body:not(.dark-mode) header {
+    background: var(--nav-bg);
+    border-bottom-color: rgba(148, 163, 184, 0.16);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+body:not(.dark-mode) header.scrolled {
+    background: var(--nav-bg-scrolled);
+}
+
+body:not(.dark-mode) .hero {
+    background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
+}
+
+body:not(.dark-mode) .about-section,
+body:not(.dark-mode) .skills-section,
+body:not(.dark-mode) .education-section,
+body:not(.dark-mode) .contact-section,
+body:not(.dark-mode) .journey-hero,
+body:not(.dark-mode) .journey-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+body:not(.dark-mode) .projects-section,
+body:not(.dark-mode) .experience-section,
+body:not(.dark-mode) .achievements-section {
+    background: #f8fafc;
+}
+
+body:not(.dark-mode) .card,
+body:not(.dark-mode) .project-card,
+body:not(.dark-mode) .skill-category-card,
+body:not(.dark-mode) .timeline-content,
+body:not(.dark-mode) .education-card,
+body:not(.dark-mode) .achievement-card,
+body:not(.dark-mode) .testimonial-card,
+body:not(.dark-mode) .contact-form,
+body:not(.dark-mode) .contact-item,
+body:not(.dark-mode) .profile-card,
+body:not(.dark-mode) .journey-hero-panel,
+body:not(.dark-mode) .journey-entry,
+body:not(.dark-mode) .month-card,
+body:not(.dark-mode) .community-panel,
+body:not(.dark-mode) .community-comment,
+body:not(.dark-mode) .skills-disclaimer,
+body:not(.dark-mode) .value-item,
+body:not(.dark-mode) .stat-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .card:hover,
+body:not(.dark-mode) .project-card:hover,
+body:not(.dark-mode) .skill-category-card:hover,
+body:not(.dark-mode) .timeline-content:hover,
+body:not(.dark-mode) .education-card:hover,
+body:not(.dark-mode) .achievement-card:hover,
+body:not(.dark-mode) .testimonial-card:hover,
+body:not(.dark-mode) .contact-form:hover,
+body:not(.dark-mode) .contact-item:hover,
+body:not(.dark-mode) .profile-card:hover,
+body:not(.dark-mode) .journey-hero-panel:hover,
+body:not(.dark-mode) .journey-entry:hover,
+body:not(.dark-mode) .month-card:hover,
+body:not(.dark-mode) .community-panel:hover,
+body:not(.dark-mode) .community-comment:hover,
+body:not(.dark-mode) .value-item:hover,
+body:not(.dark-mode) .stat-card:hover {
+    background: var(--card-bg-hover);
+}
+
+body:not(.dark-mode) .project-overlay {
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.96) 100%);
+}
+
+body:not(.dark-mode) .project-title,
+body:not(.dark-mode) .timeline-title,
+body:not(.dark-mode) .education-degree,
+body:not(.dark-mode) .achievement-title,
+body:not(.dark-mode) .testimonial-info h4,
+body:not(.dark-mode) .profile-name,
+body:not(.dark-mode) .about-lead,
+body:not(.dark-mode) .contact-info strong,
+body:not(.dark-mode) .journey-title,
+body:not(.dark-mode) .journey-entry-content h3,
+body:not(.dark-mode) .month-card h3,
+body:not(.dark-mode) .month-summary-list strong,
+body:not(.dark-mode) .community-comment-header strong {
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .project-description,
+body:not(.dark-mode) .timeline-description,
+body:not(.dark-mode) .education-school,
+body:not(.dark-mode) .education-details,
+body:not(.dark-mode) .achievement-description,
+body:not(.dark-mode) .testimonial-text,
+body:not(.dark-mode) .about-text,
+body:not(.dark-mode) .profile-role,
+body:not(.dark-mode) .contact-info p,
+body:not(.dark-mode) .journey-subtitle,
+body:not(.dark-mode) .journey-panel-kicker,
+body:not(.dark-mode) .journey-focus-item p,
+body:not(.dark-mode) .journey-entry-content p,
+body:not(.dark-mode) .month-summary-list p,
+body:not(.dark-mode) .community-panel-header p,
+body:not(.dark-mode) .community-comment-header,
+body:not(.dark-mode) .community-comment p,
+body:not(.dark-mode) .journey-stat-label,
+body:not(.dark-mode) .section-subtitle,
+body:not(.dark-mode) .skills-intro,
+body:not(.dark-mode) .skills-disclaimer,
+body:not(.dark-mode) .timeline-date {
+    color: var(--text-secondary);
+}
+
+body:not(.dark-mode) .btn-secondary,
+body:not(.dark-mode) .btn-outline,
+body:not(.dark-mode) .project-btn.secondary {
+    background: rgba(255, 255, 255, 0.78);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .btn-secondary:hover,
+body:not(.dark-mode) .btn-outline:hover,
+body:not(.dark-mode) .project-btn.secondary:hover {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.28);
+    color: var(--primary);
+}
+
+body:not(.dark-mode) .dropdown-toggle,
+body:not(.dark-mode) .nav-links a {
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) .nav-links a:hover,
+body:not(.dark-mode) .nav-links a.active {
+    color: var(--primary);
+}
+
+body:not(.dark-mode) .community-form input,
+body:not(.dark-mode) .community-form textarea,
+body:not(.dark-mode) .community-form select,
+body:not(.dark-mode) .form-group input,
+body:not(.dark-mode) .form-group textarea {
+    background: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--border-color);
+}
+
+body:not(.dark-mode) .journey-tag,
+body:not(.dark-mode) .reaction-chip,
+body:not(.dark-mode) .tech-pill,
+body:not(.dark-mode) .timeline-tags .tag,
+body:not(.dark-mode) .skill-badge {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.18);
+    color: var(--text-primary);
+}
+
+body:not(.dark-mode) footer {
+    background: #0f172a;
+    color: var(--text-white);
 }
