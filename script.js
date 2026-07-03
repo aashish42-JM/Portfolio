@@ -224,6 +224,26 @@ document.addEventListener('DOMContentLoaded', () => {
     renderJourneyComments();
     renderJourneyFeedback();
 
+    const homeHero = document.querySelector('.home-page .hero');
+    if (homeHero) {
+        const resetGlow = () => {
+            homeHero.style.setProperty('--hero-glow-x', '50%');
+            homeHero.style.setProperty('--hero-glow-y', '20%');
+        };
+
+        const updateGlow = (event) => {
+            const rect = homeHero.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+            homeHero.style.setProperty('--hero-glow-x', `${Math.max(0, Math.min(100, x)).toFixed(2)}%`);
+            homeHero.style.setProperty('--hero-glow-y', `${Math.max(0, Math.min(100, y)).toFixed(2)}%`);
+        };
+
+        resetGlow();
+        homeHero.addEventListener('pointermove', updateGlow, { passive: true });
+        homeHero.addEventListener('pointerleave', resetGlow, { passive: true });
+    }
+
     updateScrollProgress();
     updateActiveNavLink();
 });

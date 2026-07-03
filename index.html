@@ -42,16 +42,15 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
     <header>
         <nav>
             <div class="nav-container">
                 <a href="#home" class="logo">
                     <div class="photo-container">
                         <img src="images/profile.jpg" alt="Aashish Timalsina" class="header-photo" id="header-img" loading="eager">
-                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="enlarged-photo" loading="lazy">
                     </div>
                     <h1>Aashish Timalsina</h1>
                 </a>
@@ -86,31 +85,44 @@
         <div class="hero-background">
             <div class="gradient-blob blob-1" data-parallax="0.2"></div>
             <div class="gradient-blob blob-2" data-parallax="0.15"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
         </div>
         <div class="hero-content">
             <div class="hero-left">
                 <div class="hero-badge reveal">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-graduation-cap"></i>
                     <span>Nepal • CSIT Student</span>
                 </div>
                 <h1 class="hero-title reveal">
-                    Building <span class="highlight">AI-powered platforms</span> for real-world impact.
+                    Aashish Timalsina
                 </h1>
                 <p class="hero-subtitle reveal">
-                    Full Stack Developer focused on AI and modern web technologies.
+                    I design and build AI-focused web products that are clean, practical, and ready for real users.
                 </p>
+                <div class="hero-tech reveal">
+                    <span class="tech-pill">Full Stack</span>
+                    <span class="tech-pill">AI / ML</span>
+                    <span class="tech-pill">React</span>
+                    <span class="tech-pill">Node.js</span>
+                    <span class="tech-pill">UI Systems</span>
+                </div>
                 <div class="hero-cta reveal">
                     <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i>
                         View Projects
                     </a>
                     <a href="journey.html" class="btn btn-outline">
+                        <i class="fas fa-route"></i>
                         Journey
                     </a>
                     <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i>
                         Contact Me
                     </a>
                 </div>
                 <div class="hero-social reveal">
+                    <span class="hero-social-label">Connect</span>
                     <a href="https://github.com/aashish42-JM" target="_blank" rel="noopener noreferrer" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
@@ -123,8 +135,33 @@
                 </div>
             </div>
             <div class="hero-right">
-                <div class="hero-image-wrapper" data-parallax="0.1">
-                    <img src="images/profile.jpg" alt="Aashish Timalsina" class="hero-image">
+                <div class="hero-profile-card reveal tilt" data-parallax="0.1">
+                    <div class="hero-profile-media">
+                        <img src="images/profile.jpg" alt="Aashish Timalsina" class="hero-image">
+                        <div class="hero-profile-glow"></div>
+                        <span class="hero-floating-chip chip-1"><i class="fab fa-react"></i> React</span>
+                        <span class="hero-floating-chip chip-2"><i class="fas fa-brain"></i> AI</span>
+                        <span class="hero-floating-chip chip-3"><i class="fas fa-server"></i> Backend</span>
+                    </div>
+                    <div class="hero-profile-body">
+                        <p class="hero-profile-kicker">Modern developer portfolio</p>
+                        <h2>Clean interfaces. Practical products. Real impact.</h2>
+                        <p>I focus on AI, web systems, and polished experiences that feel trustworthy, modern, and easy to use.</p>
+                        <div class="hero-profile-stats">
+                            <div class="hero-mini-stat">
+                                <strong>4</strong>
+                                <span>Projects</span>
+                            </div>
+                            <div class="hero-mini-stat">
+                                <strong>8+</strong>
+                                <span>Tools</span>
+                            </div>
+                            <div class="hero-mini-stat">
+                                <strong>2</strong>
+                                <span>Hackathons</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,13 +252,37 @@
 
     <section id="skills" class="skills-section section">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <p class="skills-intro">Here are the technologies and tools I work with, categorized by area of expertise. Some are core skills, others are areas I'm actively learning and exploring.</p>
-            
-            <p class="skills-disclaimer">
-                <i class="fas fa-info-circle"></i> 
-                Disclaimer: These skill sets are just for representation and may include roadmap or target skills I'm working towards.
-            </p>
+            <div class="section-header skills-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">A focused view of the tools I use to build fast, polished, and practical digital products.</p>
+            </div>
+
+            <div class="skills-showcase card reveal">
+                <div class="skills-showcase-copy">
+                    <p class="skills-kicker">My stack</p>
+                    <h3>Built for product work, learning, and shipping.</h3>
+                    <p class="skills-intro">I keep a balanced stack across interface design, server logic, data handling, and AI-assisted workflows. The section below shows where I’m strongest today and where I’m actively leveling up next.</p>
+                </div>
+                <div class="skills-metrics">
+                    <div class="skills-metric card">
+                        <span class="skills-metric-number">4</span>
+                        <span class="skills-metric-label">Skill groups</span>
+                    </div>
+                    <div class="skills-metric card">
+                        <span class="skills-metric-number">8+</span>
+                        <span class="skills-metric-label">Core tools</span>
+                    </div>
+                    <div class="skills-metric card">
+                        <span class="skills-metric-number">3</span>
+                        <span class="skills-metric-label">AI workflows</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-disclaimer card">
+                <i class="fas fa-circle-info"></i>
+                <span>These skill levels are representative and include both current strengths and technologies I’m actively improving.</span>
+            </div>
             
             <div class="skills-categories">
                 <!-- Frontend Category -->
